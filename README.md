@@ -1,46 +1,43 @@
-Webapp Wrapper For XULApp StarterKit
+TodoMVC For XULApp StarterKit
 -----------------------------
-Webapp Wrapper is a simple build script for XULApp StarterKit.
-
-It packaging HTML5 Web Application as XULApp StarterKit's add-on.
-
-
-Benefits
------------------------------
-
-* Latest HTML5 support (Same as Firefox 18, and easy to use new Gecko versions as they are released)
-* Can using XULApp StarterKit Auto-load Modules .
-* Bundled HTTP server (No local content restrictions like when using file:// protocol etc) .
-  * Default bind address 127.0.0.1
-  * Default listen port 54321
+It packaging [TodoMVC](https://github.com/addyosmani/todomvc) HTML5 Web Application as XULApp StarterKit's add-on.
 
 
 Download pre-build XPI
 -----------------------------
-Download pre-build XPI in [downloads](https://github.com/racklin/xulapp-starterkit-app-webapp-wrapper/tree/master/downloads)
+Remove all labs demo to reduce XPI size.
+Download pre-build XPI in [downloads](https://github.com/racklin/xulapp-starterkit-app-todomvc/tree/master/downloads)
 
 
-Get started
+What is TodoMVC
 -----------------------------
-Build Webapp Wrapper for your web application:
-
-1. Fork this project.
-2. Copy your web application to webapp/ directory.
-3. Change install.rdf and build.sh for your project name.
-4. Change bind address or port in defaults/preferences/http.js.
-5. run build.sh
+## Helping you select an MV\* framework
 
 
-Auto-Load Modules in HTML5
------------------------------
-In javascript you can using *XULApp* global variable to access Modules.
+Developers these days are spoiled with choice when it comes to selecting an MV\* framework for structuring and organizing JavaScript web apps.
 
-```
-<p><a onclick="XULApp.Notification.info('Hello', 'World'); return false;">Demo XULApp XPCOM Notification</a></p>
-```
+Backbone, Ember, AngularJS, Spine... the list of new and stable solutions goes on and on, but just how do you decide on which to use in a sea of so many options?
+
+To help solve this problem, we created TodoMVC - a project which offers the same Todo application implemented using MV* concepts in most of the popular JavaScript MV\* frameworks of today.
+
+
+#### Todo apps are included for:
+
+- [Backbone.js](http://documentcloud.github.com/backbone)
+- [Ember.js](http://emberjs.com)
+- [AngularJS](http://angularjs.org)
+- [Spine](http://spinejs.com)
+- [KnockoutJS](http://knockoutjs.com) (MVVM)
+- [Dojo](http://dojotoolkit.org)
+- [YUI](http://yuilibrary.com)
+- [Batman.js](http://batmanjs.org)
+- [Closure](http://code.google.com/closure/library/)
+- [Agility.js](http://agilityjs.com)
+- [Knockback.js](http://kmalakoff.github.com/knockback)
+- [Google Web Toolkit](https://developers.google.com/web-toolkit/)
 
 
 License
 -----------------------------
-Webapp Wrapper For XULApp StarterKit are licensed under the [MPL License].
-See LICENSE for more details.
+TodoMVC are MIT License
+Copyright (c) Addy Osmani & Sindre Sorhus

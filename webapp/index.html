@@ -1,68 +1,164 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-
-        <link rel="stylesheet" href="styles/bootstrap.css">
-        <script src="scripts/vendor/modernizr.min.js"></script>
-    </head>
-    <body>
-    <div class="container" style="margin:50px;">
-        <div class="hero-unit">
-            <h1>Sample Webapp</h1>
-            <p>Packaged as a standalone desktop app using Webapp XUL Wrapper</p>
-            <ul>
-                <li>HTML5 Boilerplate</li>
-                <li>Twitter Bootstrap</li>
-                <li>RequireJS</li>
-            </ul>
-            <p></p>
-            <h3>Running from <a id="currentUrl" href="#">...</a></h3>
-            <p> </p>
-            <p><a onclick="XULApp.Notification.info('Hello', 'World'); return false;">Demo XULApp XPCOM Notification</a></p>
-            <p> </p>
-            <p><a href="http://html5test.com/">How well does this browser support HTML5?</a></p>
-        </div>
-    </div>
-
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-
-        <script>
-          alert(Components);
-          alert(Components.classes["@webapp-xul-wrapper/App;1"]
-          .getService(Components.interfaces.nsISupports)
-          .wrappedJSObject);
-        </script>
-        <script src="chrome://xulapp/content/init.js"></script><!-- load xulapp starterkit init.js -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
-
-
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-
-    <!-- build:js scripts/amd-app.js -->
-    <script data-main="scripts/main" src="scripts/vendor/require.js"></script>
-    <!-- endbuild -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>TodoMVC</title>
+	<meta name="description" content="Helping you select an MV* framework - Todo apps for Backbone.js, Ember.js, AngularJS, Spine and many more">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="twitter:card" content="summary">
+	<meta property="og:url" content="http://todomvc.com">
+	<meta property="og:title" content="TodoMVC">
+	<meta property="og:image" content="https://raw.github.com/addyosmani/todomvc/gh-pages/screenshot.png">
+	<meta property="og:description" content="Helping you select an MV* framework - Todo apps for Backbone.js, Ember.js, AngularJS, Spine and many more">
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="shortcut icon" href="site/favicon.ico">
+	<link rel="stylesheet" href="site/css/bootstrap.min.css">
+	<link rel="stylesheet" href="site/css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" href="site/css/main.css">
+</head>
+<body>
+	<div class="container">
+		<header class="row">
+			<div class="span8">
+				<img class="logo" src="site/img/logo.svg" width="500" height="86" alt="TodoMVC">
+				<p>Helping you <strong>select</strong> an MV* framework</p>
+				<nav>
+					<a href="https://github.com/addyosmani/todomvc/zipball/1.0.1" class="zocial red">Download (1.0.1)</a>
+					<a href="https://github.com/addyosmani/todomvc" class="zocial red">View project on GitHub</a>
+				</nav>
+			</div>
+			<div class="span4">
+				<img class="logo-icon" src="site/img/logo-icon.png" width="330" height="330" alt="TodoMVC">
+			</div>
+		</header>
+		<div class="row">
+			<div class="span4">
+				<h2>Introduction</h2>
+				<p>Developers these days are spoiled with choice when it comes to selecting an <strong>MV* framework</strong> for structuring and organizing their JavaScript web apps.</p>
+				<p>Backbone, Ember, AngularJS, Spine... the list of new and stable solutions continues to grow, but just how do you decide on which to use in a sea of so many options?</p>
+				<p>To help solve this problem, we created <a href="https://github.com/addyosmani/todomvc">TodoMVC</a> - a project which offers the same Todo application implemented using MV* concepts in most of the popular JavaScript MV* frameworks of today.</p>
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://todomvc.com" data-text="TodoMVC - Helping you select an MV* framework - Todo apps for Backbone.js, Ember.js, AngularJS, Spine and many more"></a>
+				<div class="g-plusone" data-size="medium" data-annotation="none" data-href="http://todomvc.com"></div>
+			</div>
+			<div class="span8">
+				<h2>Our Stable Apps</h2>
+				<ul class="applist">
+					<li data-routing>
+						<a href="architecture-examples/backbone/index.html" data-source="http://documentcloud.github.com/backbone/" data-content="Backbone.js gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface.">Backbone.js</a>
+					</li>
+					<li data-routing>
+						<a href="architecture-examples/emberjs/index.html" data-source="http://emberjs.com" data-content="Ember is a JavaScript framework for creating ambitious web applications that eliminates boilerplate and provides a standard application architecture.">Ember.js</a>
+					</li>
+					<li data-routing>
+						<a class="routing" href="architecture-examples/angularjs/index.html" data-source="http://angularjs.org" data-content="What HTML would have been had it been designed for web apps">AngularJS</a>
+					</li>
+					<li data-routing>
+						<a href="architecture-examples/spine/index.html" data-source="http://spinejs.com" data-content="Spine is a lightweight framework for building JavaScript web applications. Spine gives you an MVC structure and then gets out of your way, allowing you to concentrate on the fun stuff, building awesome web applications.">Spine</a>
+					</li>
+					<li data-routing>
+						<a href="architecture-examples/knockoutjs/index.html" data-source="http://knockoutjs.com" data-content="Simplify dynamic JavaScript UIs by applying the Model-View-View Model (MVVM) pattern">KnockoutJS</a>
+					</li>
+					<li data-routing>
+						<a href="architecture-examples/dojo/index.html" data-source="http://dojotoolkit.org" data-content="Dojo saves you time and scales with your development process, using web standards as its platform. It’s the toolkit experienced developers turn to for building high quality desktop and mobile web applications.">Dojo</a>
+					</li>
+					<li data-routing>
+						<a href="architecture-examples/yui/index.html" data-source="http://yuilibrary.com" data-content="YUI's lightweight core and modular architecture make it scalable, fast, and robust. Built by frontend engineers at Yahoo!, YUI powers the most popular websites in the world.">YUI</a>
+					</li>
+					<li data-routing>
+						<a href="architecture-examples/closure/index.html" data-source="http://code.google.com/closure/library/" data-content="The Closure Library is a broad, well-tested, modular, and cross-browser JavaScript library. You can pull just what you need from a large set of reusable UI widgets and controls, and from lower-level utilities for DOM manipulation, server communication, animation, data structures, unit testing, rich-text editing, and more.">Closure</a>
+					</li>
+					<li data-routing>
+						<a href="architecture-examples/agilityjs/index.html" data-source="http://agilityjs.com" data-content="Agility.js is an MVC library for Javascript that lets you write maintainable and reusable browser code without the infrastructural overhead found in other MVC libraries. The goal is to enable developers to write web apps at least as quickly as with jQuery, while simplifying long-term maintainability through MVC objects.">Agility.js</a>
+					</li>
+					<li data-routing>
+						<a href="architecture-examples/knockback/index.html" data-source="http://kmalakoff.github.com/knockback/" data-content="Knockback.js provides Knockout.js magic for Backbone.js Models and Collections.">Knockback.js</a>
+					</li>
+					<li>
+						<a href="architecture-examples/gwt/index.html" data-source="https://developers.google.com/web-toolkit/" data-content="Google Web Toolkit (GWT) is an MVP development toolkit for building and optimizing complex browser-based applications. GWT is used by many products at Google, including Google AdWords.">GWT</a>
+					</li>
+				</ul>
+				<hr>
+				<h2>Apps using RequireJS/AMD</h2>
+				<ul class="applist amd">
+					<li data-routing>
+						<a href="dependency-examples/backbone_require/index.html" data-source="http://requirejs.org" data-content="RequireJS is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments, like Rhino and Node. Using a modular script loader like RequireJS will improve the speed and quality of your code.">Backbone.js + RequireJS</a>
+					</li>
+					<li data-routing>
+						<a href="dependency-examples/emberjs_require/index.html" data-source="http://emberjs.com" data-content="Ember is a JavaScript framework for creating ambitious web applications that eliminates boilerplate and provides a standard application architecture. This is an example of using it with AMD modules">Ember.js + RequireJS</a>
+					</li>
+				</ul>
+				<h2>Compare these to a non-framework implementation</h2>
+				<ul class="applist">
+					<li>
+						<a href="vanilla-examples/vanillajs/index.html" data-source="https://developer.mozilla.org/en/JavaScript" data-content="You know JavaScript right? :P">Vanilla JS</a>
+					</li>
+					<li>
+						<a href="architecture-examples/jquery/index.html" data-source="http://jquery.com" data-content="jQuery is a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. jQuery is designed to change the way that you write JavaScript.">jQuery</a>
+					</li>
+				</ul>
+				<p>* <span class="label">R</span> = App also demonstrates routing</p>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<h2 style="text-align:center;font-weight:300">Scroll down for 30+ more framework apps in Labs</h2>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="span6">
+				<blockquote class="quote speech-bubble">
+					<p></p>
+					<footer>
+						<img width="40" height="40" alt="">
+						<a></a>
+					</footer>
+				</blockquote>
+			</div>
+			<div class="span6">
+				<img class="screenshot" src="site/img/screenshot.png" width="558" height="246" alt="Todo app screenshot">
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="span4">
+				<h2>What's new in 1.0.x</h2>
+				<ul class="whats-new">
+					<li>All main apps have been completely rewritten for consistency</li>
+					<li>Routing has been added to many of these</li>
+					<li>We now have 30+ apps being worked on in Labs</li>
+					<li>We're using a kick-ass new template</li>
+					<li>Framework authors and contributors have been consulted to ensure our apps adhere to best practices</li>
+					<li>We're helping AMD users by adding AMD versions of many apps</li>
+				</ul>
+			</div>
+			<div class="span4">
+				<h2>Selecting a Framework</h2>
+				<p>Once you've downloaded the latest release and played around with the apps, you'll want to decide on a specific framework to try out.</p>
+				<p>Study the syntax required for defining models, views and (where applicable) controllers and classes in the frameworks you're interested in and try your hand at editing the code to see how it feels using it first-hand.</p>
+				<p>Please ensure that if you're happy with this, you do spend more time investigating the framework (including reading the official docs, the source and its complete feature list). There's often a lot more to a framework than what we present in our examples.</p>
+			</div>
+			<div class="span4">
+				<h2>Getting Involved</h2>
+				<p>Is there a bug we haven't fixed or an MV* framework you feel would benefit from being included in TodoMVC?</p>
+				<p>If so, feel free to fork the repo, read our <a href="https://github.com/addyosmani/todomvc/wiki">contribution guidelines</a>, and submit a pull request &mdash; we'll be happy to review it for inclusion.</p>
+				<p>Make sure you use the <a href="https://github.com/addyosmani/todomvc/tree/gh-pages/template">template</a> as a starting point and read the <a href="https://github.com/addyosmani/todomvc/wiki/App-Specification">app specification</a>.</p>
+				<p>
+					<a class="zocial small gray" href="https://github.com/addyosmani/todomvc/wiki">Submit Pull Request &raquo;</a>
+				</p>
+			</div>
+		</div>
+		<hr>
+		<footer class="credit">
+			<p>Brought to you by<a href="https://github.com/addyosmani"><img src="http://gravatar.com/avatar/96270e4c3e5e9806cf7245475c00b275?s=80" width="40" height="40" alt="Sindre Sorhus">Addy Osmani</a> and <a href="https://github.com/sindresorhus"><img src="http://gravatar.com/avatar/d36a92237c75c5337c17b60d90686bf9.png?s=80" width="40" height="40" alt="Sindre Sorhus">Sindre Sorhus</a></p>
+		</footer>
+	</div>
+	<script src="assets/jquery.min.js"></script>
+	<script src="site/js/bootstrap.min.js"></script>
+	<script src="site/js/main.js"></script>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	<script>(function(){var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();</script>
+	<script>var _gaq=[['_setAccount','UA-31081062-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'));</script>
 </body>
 </html>

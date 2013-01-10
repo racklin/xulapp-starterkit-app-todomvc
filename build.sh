@@ -4,14 +4,14 @@
 
 CALLDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-PACKAGENAME="xulapp-starterkit-webapp-wrapper"
-VERSION="1.1.1"
+PACKAGENAME="xulapp-starterkit-app-todomvc"
+VERSION="1.0.1"
 
 BUILDID=`date +%Y%m%d`
 DISTDIR="$CALLDIR/dist"
 BUILDDIR="$CALLDIR/build"
 
-echo "Building Webapp Wrapper for XULApp StarterKit"
+echo "Building ToDoMVC for XULApp StarterKit"
 
 # Remove build directory
 if [ ! -d "$BUILDDIR" ]; then mkdir -p "$BUILDDIR"; fi
